@@ -4,9 +4,13 @@ import one from "../../../assets/1.png";
 import two from "../../../assets/2.png";
 import three from "../../../assets/3.png";
 
-const images = [one, two, three];
+const images = [
+  { id: 1, image: one },
+  { id: 2, image: two },
+  { id: 3, image: three },
+];
 
-const Slider = () => {
+function Slider() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -23,20 +27,18 @@ const Slider = () => {
 
   return (
     <div className={styles.slider}>
-      {images.map((image, index) => (
+      {images.map(({ id, image }) => (
         <img
-          key={index}
+          key={id}
           src={image}
-          alt={`Slide ${index + 1}`}
+          alt={`Slide ${id}`}
           className={
-            index === currentImageIndex
-              ? styles.slideVisible
-              : styles.slideHidden
+            id === currentImageIndex ? styles.slideVisible : styles.slideHidden
           }
         />
       ))}
     </div>
   );
-};
+}
 
 export default Slider;

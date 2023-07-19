@@ -1,0 +1,86 @@
+/* MusicPlayer.module.scss */
+
+.musicPlayer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #121212;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.musicImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.musicDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.musicTitle {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.musicSubtitle {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.playerControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.controlButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.controlButton img {
+  width: 35px;
+  height: 35px;
+}
+
+.timeline {
+  height: 2px;
+  width: 100%;
+  background-color: #555;
+  border-radius: 2px;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volumeIcon {
+  width: 24px;
+  height: 24px;
+}
