@@ -1,0 +1,55 @@
+/* Home.module.css */
+
+.container {
+  display: flex;
+  height: 92vh;
+}
+
+.leftSection {
+  flex: 1;
+  padding: 5px;
+  background-color: #212121;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.centerSection {
+  flex: 3;
+  padding: 5px;
+  background-color: #212121;
+  border-radius: 10px;
+  margin: 0.5rem 0.1rem;
+}
+
+.rightSection {
+  flex: 1;
+  padding: 5px;
+  background-color: #212121;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.bottomSection {
+  height: 100%;
+  margin: 0.1rem 0.5rem;
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+}
+/* Ajoutez plus de styles selon vos besoins pour votre contenu spécifique */
