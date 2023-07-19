@@ -4,6 +4,8 @@ import logo from "../../assets/logo.svg";
 import styles from "./index.module.scss"; // You can use your own CSS module for styling
 import Menu from "./Menu";
 import PlaylistList from "./PlaylistList";
+import Slider from "./Slider";
+import SongsList from "./SongsList";
 
 function Home() {
   return (
@@ -13,39 +15,14 @@ function Home() {
         <div className={styles.leftSection}>
           <Menu />
           <PlaylistList />
-
-          <img src={logo} className={styles.logo} alt="logo" />
-          <p>Hello Vite + React !</p>
-          <Counter />
-          <p>
-            Edit <code>App.jsx</code> and save to test HMR updates.
-          </p>
-          <p>
-            <a
-              className={styles.link}
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>{" "}
-            |{" "}
-            <a
-              className={styles.link}
-              href="https://vitejs.dev/guide/features.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vite Docs
-            </a>
-          </p>
         </div>
 
         {/* Center section */}
         <div className={styles.centerSection}>
           {/* Your content for the center section goes here */}
           {/* For example, you can add a playlist or a player */}
-          <Counter />
+          <Slider />
+          <SongsList />
         </div>
 
         {/* Right section */}
