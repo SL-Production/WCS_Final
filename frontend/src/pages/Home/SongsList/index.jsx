@@ -6,9 +6,11 @@ import likes from "../../../assets/likes.png";
 const playlists = [
   {
     id: 1,
-    name: "Vos likes",
-    subtitle: "Subtitle 1",
+    name: "NEW YORK",
+    subtitle: "Anglade",
     image: likes,
+    album: "NEW YORK",
+    addedDate: "2021-05-01",
   },
   {
     id: 2,
@@ -73,21 +75,10 @@ const playlists = [
   // Ajoutez plus de playlists avec leurs titres, sous-titres et URLs d'image ici
 ];
 
-function PlaylistList() {
+function SongsList() {
   return (
     <div>
       <div className={styles.playlistContainer}>
-        <div className={styles.titleContainer}>
-          <h2 className={styles.playlistTitle}>Mes Playlists</h2>
-          <div className={styles.sortButtons}>
-            <button className={styles.sortButton} type="button">
-              Trier par nom
-            </button>
-            <button className={styles.sortButton} type="button">
-              Trier par date
-            </button>
-          </div>
-        </div>
         {playlists.map((playlist) => (
           <button
             key={playlist.id}
@@ -112,4 +103,4 @@ function PlaylistList() {
   );
 }
 
-export default PlaylistList;
+export default SongsList;
