@@ -1,0 +1,30 @@
+/* PlaylistList.module.css */
+
+.playlistContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-height: 300px; /* Hauteur maximale pour le défilement */
+    overflow-y: auto; /* Activation du défilement vertical si nécessaire */
+  }
+  
+  .playlistButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    color: #fff;
+    font-size: 16px;
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Ajout d'une transition pour l'effet au survol */
+  }
+  
+  .playlistButton:hover {
+    background-color: #333; /* Changement de couleur au survol */
+  }
+  
