@@ -53,6 +53,7 @@
   gap: 10px;
   cursor: pointer;
   outline: none;
+  margin-right: 250px; /* Ajout de la marge pour aligner à droite */
 }
 
 .controlButton {
@@ -68,10 +69,27 @@
 }
 
 .timeline {
-  height: 2px;
   width: 100%;
-  background-color: #555;
-  border-radius: 2px;
+  height: 8px;
+  background-color: #b3b3b3;
+  border-radius: 8px;
+}
+
+.progressBar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.progressFilled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #007bff; // Couleur de remplissage de la barre
+  transition: width 0.3s ease; // Transition pour une animation fluide
+  border-radius: 8px;
 }
 
 .volumeControl {
