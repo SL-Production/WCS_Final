@@ -2,7 +2,9 @@
 
 .container {
   display: flex;
-  height: 92vh;
+  height: calc(
+    100vh - 150px
+  ); /* Ajustement de la hauteur pour tenir compte de la section inférieure */
 }
 
 .leftSection {
@@ -11,6 +13,7 @@
   background-color: #212121;
   border-radius: 10px;
   margin: 0.5rem;
+  overflow-y: auto; /* Activation du défilement vertical si nécessaire */
 }
 
 .logo {
@@ -41,16 +44,15 @@
 }
 
 .bottomSection {
-  height: 100%;
-  margin: 0.1rem 0.5rem;
+  height: 50px;
   background-color: #212121;
   border-radius: 10px;
-  padding: 5px;
 }
 
 .home {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #121212;
+  overflow: hidden; /* Empêche l'affichage de la barre de défilement */
 }
-/* Ajoutez plus de styles selon vos besoins pour votre contenu spécifique */
