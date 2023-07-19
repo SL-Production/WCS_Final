@@ -12,6 +12,8 @@ const playlists = [
   { id: 8, name: 'Playlist 8' },
   { id: 9, name: 'Playlist 9' },
   { id: 10, name: 'Playlist 10' },
+  { id: 11, name: 'Playlist 10' },
+  { id: 12, name: 'Playlist 10' },
 ];
 
 const PlaylistList = () => {
