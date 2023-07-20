@@ -6,6 +6,7 @@ import PlaylistList from "./PlaylistList";
 import Slider from "./Slider";
 import SongsList from "./SongsList";
 import MusicPlayer from "./MusicPlayer";
+import likes from "../../assets/likes.png";
 
 import vingt from "../../assets/songs/25G.mp3";
 import bad from "../../assets/songs/BAD_(feat.Omah_Lay).mp3";
@@ -20,8 +21,6 @@ import respect from "../../assets/songs/RESPECT.mp3";
 import johny from "../../assets/songs/LA VIE DE JOHNNY.mp3";
 import rich from "../../assets/songs/RICH PORTER.mp3";
 import yomoko from "../../assets/songs/YO MOKO OYEBI.mp3";
-
-import likes from "../../assets/likes.png";
 
 const playlists = [
   {
@@ -136,6 +135,7 @@ function Home() {
   const [audio] = useState(new Audio());
   const [selectedMusic, setSelectedMusic] = useState(null);
   const [selectedMusicObj, setSelectedMusicObj] = useState(null);
+  const [currentMusicIndex, setCurrentMusicIndex] = useState(0);
 
   useEffect(() => {
     const handleAudioError = (error) => {
@@ -159,6 +159,28 @@ function Home() {
     setIsPlaying(!isPlaying);
   };
 
+  const handlePrev = () => {
+    setCurrentMusicIndex((prevIndex) =>
+      prevIndex === 0 ? playlists.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentMusicIndex((prevIndex) =>
+      prevIndex === playlists.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  useEffect(() => {
+    const currentMusic = playlists[currentMusicIndex];
+
+    if (currentMusic) {
+      setSelectedMusic(currentMusic.music);
+      setSelectedMusicObj(currentMusic);
+      setIsPlaying(true);
+    }
+  }, [currentMusicIndex]);
+
   useEffect(() => {
     if (audio.paused || audio.src !== selectedMusic) {
       audio.src = selectedMusic;
@@ -181,13 +203,16 @@ function Home() {
         </div>
 
         <div className={styles.centerSection}>
-          <Slider />
+          <div className={styles.centerSlider}>
+            <Slider />
+          </div>
           <SongsList
             playlists={playlists}
             onSongClick={(song) => {
-              setSelectedMusic(song.music);
-              setIsPlaying(true);
-              setSelectedMusicObj(song);
+              const songIndex = playlists.findIndex(
+                (item) => item.id === song.id
+              );
+              setCurrentMusicIndex(songIndex);
             }}
           />
         </div>
@@ -201,6 +226,8 @@ function Home() {
           <MusicPlayer
             isPlaying={isPlaying}
             onPlayPause={handlePlayPause}
+            onPrev={handlePrev}
+            onNext={handleNext}
             audio={audio}
             music={selectedMusicObj}
           />

@@ -16,24 +16,28 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  max-width: 2000px;
   gap: 10px;
+  margin-right: 5rem;
 }
 
 .musicImage {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   border-radius: 8px;
 }
 
 .musicDetails {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: flex-start;
 }
 
 .musicTitle {
   font-size: 16px;
   font-weight: bold;
+  margin-bottom: -4px;
+  justify-content: flex-start;
 }
 
 .musicSubtitle {
@@ -47,13 +51,21 @@
   cursor: pointer;
 }
 
+.controlsAndTimeline {
+  display: flex;
+  width: 70%;
+  flex-direction: column; /* Place les contrôles de musique au-dessus de la barre de durée */
+}
+
 .playerControls {
   display: flex;
+  flex-direction: row; /* Remet les boutons de contrôle de la musique dans une rangée */
   align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
   gap: 10px;
   cursor: pointer;
   outline: none;
-  margin-right: 250px; /* Ajout de la marge pour aligner à droite */
 }
 
 .controlButton {
@@ -87,8 +99,8 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #007bff; // Couleur de remplissage de la barre
-  transition: width 0.3s ease; // Transition pour une animation fluide
+  background-color: #4512bd; /* Couleur de remplissage de la barre */
+  transition: width 0.3s ease; /* Transition pour une animation fluide */
   border-radius: 8px;
 }
 
