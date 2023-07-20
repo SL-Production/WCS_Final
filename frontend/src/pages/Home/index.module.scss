@@ -56,3 +56,27 @@
   background-color: #121212;
   overflow: hidden; /* Empêche l'affichage de la barre de défilement */
 }
+
+/* Ajout de Media Queries pour le rendu responsive */
+
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    height: auto; /* Rétablir la hauteur automatique */
+  }
+
+  .centerSlider {
+    margin: 0.5rem; /* Réduire la marge */
+    gap: 2rem; /* Réduire l'espace entre les éléments */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .centerSlider {
+    display: none; /* Masquer le Slider */
+  }
+
+  .rightSection {
+    display: none; /* Masquer la section de droite */
+  }
+}
